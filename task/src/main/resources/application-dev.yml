@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fido
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+
+  sql:
+    init:
+      mode: always
+  main:
+    allow-circular-references: true
+
+springdoc:
+  paths-to-match: /v1, /api/**
+  packages-to-scan: spring.io.task.task1.controller
+
+server:
+  error:
+    include-binding-errors: always
